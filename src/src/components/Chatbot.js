@@ -1,17 +1,28 @@
-import zIndex from "@mui/material/styles/zIndex";
-import React, { useState } from "react";
-import { FaComments, FaTimes } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaComments, FaTimes, FaUser } from "react-icons/fa";
+import styles from "../../chatbot.module.css";
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
+    const [showPopup, setShowPopup] = useState(false);
 
-    const toggleChat = () => setIsOpen(!isOpen);
+    // Show chatbot popup after 5 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPopup(true);
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    const toggleChat = () => {
+        setIsOpen(!isOpen);
+        setShowPopup(false);
+    };
 
     const sendMessage = async () => {
         if (!input.trim()) return;
-
         const newMessages = [...messages, { sender: "user", text: input }];
         setMessages(newMessages);
         setInput("");
@@ -27,120 +38,66 @@ const Chatbot = () => {
     };
 
     return (
-        <div>
+        <div className={styles.chatbotWrapper}>
+            {/* Chat Popup Notification */}
+            {showPopup && !isOpen && (
+                <div 
+                    className={styles.chatPopup} 
+                    role="button" 
+                    tabIndex={0} 
+                    onClick={toggleChat} 
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") toggleChat();
+                    }}
+                >
+                    Need help? Click to chat!
+                </div>
+            )}
+
             {/* Floating Chat Button */}
             {!isOpen && (
-                <button onClick={toggleChat} style={styles.chatButton}>
+                <button className={styles.chatButton} onClick={toggleChat}>
                     <FaComments size={24} />
                 </button>
             )}
 
             {/* Chat Window */}
-            {isOpen && (
-                <div style={styles.chatContainer}>
-                    <div style={styles.chatHeader}>
-                        <span>Chatbot</span>
-                        <button onClick={toggleChat} style={styles.closeButton}>
-                            <FaTimes size={18} />
-                        </button>
-                    </div>
-
-                    <div style={styles.chatBody}>
-                        {messages.map((msg, index) => (
-                            <div key={index} style={{ textAlign: msg.sender === "user" ? "right" : "left", margin: "5px 0" }}>
-                                <strong>{msg.sender === "user" ? "You" : "Bot"}:</strong> {msg.text}
-                            </div>
-                        ))}
-                    </div>
-
-                    <div style={styles.chatFooter}>
-                        <input
-                            type="text"
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyPress={(e) => e.key === "Enter" && sendMessage()}
-                            style={styles.input}
-                            placeholder="Type a message..."
-                        />
-                        <button onClick={sendMessage} style={styles.sendButton}>
-                            Send
-                        </button>
-                    </div>
+            <div className={`${styles.chatContainer} ${isOpen ? styles.open : ""}`}>
+                <div className={styles.chatHeader}>
+                    <FaUser className={styles.userIcon} size={18} />
+                    <span>Chat Support</span>
+                    <button className={styles.closeButton} onClick={toggleChat}>
+                        <FaTimes size={18} />
+                    </button>
                 </div>
-            )}
+
+                <div className={styles.chatWelcome}>
+                    Hi! I'm your chatbot assistant. How can I help you?
+                </div>
+
+                <div className={styles.chatBody}>
+                    {messages.map((msg, index) => (
+                        <div key={index} className={`${styles.message} ${msg.sender === "user" ? styles.user : styles.bot}`}>
+                            <strong>{msg.sender === "user" ? "You" : "Bot"}:</strong> {msg.text}
+                        </div>
+                    ))}
+                </div>
+
+                <div className={styles.chatFooter}>
+                    <input
+                        type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+                        placeholder="Type a message..."
+                    />
+                    <button className={styles.sendButton} onClick={sendMessage}>
+                        Send
+                    </button>
+                </div>
+            </div>
         </div>
     );
-};
-
-// Styling
-const styles = {
-    chatButton: {
-        position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        backgroundColor: "#007bff",
-        color: "white",
-        border: "none",
-        borderRadius: "50%",
-        width: "50px",
-        height: "50px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        cursor: "pointer",
-        zIndex: 1,
-    },
-    chatContainer: {
-        position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        width: "300px",
-        backgroundColor: "white",
-        borderRadius: "10px",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-        zIndex: 1,
-    },
-    chatHeader: {
-        backgroundColor: "#007bff",
-        color: "white",
-        padding: "10px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    closeButton: {
-        background: "none",
-        border: "none",
-        color: "white",
-        cursor: "pointer",
-    },
-    chatBody: {
-        height: "250px",
-        overflowY: "auto",
-        padding: "10px",
-    },
-    chatFooter: {
-        display: "flex",
-        borderTop: "1px solid #ddd",
-        padding: "10px",
-    },
-    input: {
-        flex: 1,
-        padding: "8px",
-        border: "1px solid #ddd",
-        borderRadius: "5px",
-    },
-    sendButton: {
-        marginLeft: "5px",
-        padding: "8px",
-        backgroundColor: "#007bff",
-        color: "white",
-        border: "none",
-        cursor: "pointer",
-    },
 };
 
 export default Chatbot;
