@@ -15,6 +15,7 @@ import Login from "./auth/Login";
 import Course from "./Pages/Course";
 import UserRoutes from "./Routes/UserRoutes";
 import Profile from "./UserPanel/User/Profile";
+import Chatbot from "./components/Chatbot";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/user_panel/profile" element={<Profile />} />
         </Routes>
+        <Chatbot />
       </Layout>
 
     </Router>

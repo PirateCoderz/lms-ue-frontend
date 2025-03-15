@@ -1,18 +1,14 @@
 /* eslint-disable import/no-useless-path-segments */
-
 import React from "react";
 import CustomizedAccordions from "../components/CustomizeAccordians";
 import EasyAdmision from "../components/EasyAdmision";
 import Events from "../components/Events";
 import Hero from "../components/Hero";
-
 // import LifeAtGgcsf from "../components/LifeAtGgcsf";
-
 import Ranking from "../components/Ranking";
 import AboutUs from "./../components/AboutUs";
 import Programs from "./../components/Programs";
 import NewsLetter from "./../components/NewsLetter";
-
 import SectionTitle from "../Common/SectionTitle";
 import LifeAtGgcsf from "../components/LifeAtGgcsf";
 
