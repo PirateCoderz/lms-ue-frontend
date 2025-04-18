@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Vision from "../assets/vision.png"
 import LeaderShip from "../assets/leadership.png"
-import ComputerImg from "../assets/cmp.jpg"
+import ComputerImg from "../assets/background.jpeg"
 
 
 const About = () => (
@@ -13,8 +13,7 @@ const About = () => (
         Want to be a partner and interested to meet?
       </h2>
       <p className="text-bgColor text-center text-base">
-      As one of the earliest Government Colleges in Faisalabad, Govt. Graduate College Samnabad Faisalabad is a unique and well reputed institute. It has the distinction of being the first Govt. College in Lyallpur since partition.
-      </p>
+        As one of the earliest institutions of the University of Education Faisalabad, the University is a unique and well-reputed institute.</p>
       <div className=" w-full  flex gap-4 my-10">
         <Link className="w-full" to="/admissions/contactAdmissions">
           <button className=" w-full py-4  bg-bgColor cursor-pointer custonFonts font-bold text-[18px] text-white rounded-full hover:bg-white hover:border hover:border-bgColor hover:text-bgColor transition-all ease-out duration-500">
@@ -23,7 +22,7 @@ const About = () => (
         </Link>
         <a
           className="w-full"
-          href="https://wa.me/923137248929?text=Hello%2C%20I%20would%20like%20to%20contact%20you."
+          href="https://wa.me/923000000000?text=Hello%2C%20I%20would%20like%20to%20contact%20you."
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,7 +52,7 @@ const About = () => (
         <div className="">
           <h2 className="custonFonts  text-[25px] text-textColor">Mission</h2>
           <p className="text-base text-[#999999] font-normal">
-          It appeared on the academic scene of the City as Govt. Intermediate College Lyallpur in 1958 when it was set in rented building at peoples Colony, Lyallpur. Later, in 1965 it was shifted to its present 117 kanal vast pupose built campus. The subsequent years saw the college reaching various significant mile stone:
+            It appeared on the academic scene of the City as Govt. Intermediate College Lyallpur in 1958 when it was set in rented building at peoples Colony, Lyallpur. Later, in 1965 it was shifted to its present 117 kanal vast pupose built campus. The subsequent years saw the college reaching various significant mile stone:
           </p>
         </div>
         <div className="md:flex hidden items-center justify-center">
@@ -65,7 +64,7 @@ const About = () => (
         <div className="">
           <h2 className="custonFonts  text-[25px] text-textColor">Vission</h2>
           <p className="text-base text-[#999999] font-normal">
-          It appeared on the academic scene of the City as Govt. Intermediate College Lyallpur in 1958 when it was set in rented building at peoples Colony, Lyallpur. Later, in 1965 it was shifted to its present 117 kanal vast pupose built campus. The subsequent years saw the college reaching various significant mile stone:
+            It appeared on the academic scene of the City as Govt. Intermediate College Lyallpur in 1958 when it was set in rented building at peoples Colony, Lyallpur. Later, in 1965 it was shifted to its present 117 kanal vast pupose built campus. The subsequent years saw the college reaching various significant mile stone:
           </p>
         </div>
       </div>

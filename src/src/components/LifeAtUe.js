@@ -1,19 +1,19 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react'
 
-const LifeAtGgcsf = () => (
-        <div className='w-full py-10 bg-white'>
-            <div className="flex flex-col pb-4  gap-4">
-                <div className="flex flex-col mx-auto justify-center ">
-                    <h4 className="text-[12px] text-bgColor">Explore Life with us</h4>
-                    <h2 className="text-[34px]  text-bgColor font-bold custonFonts">
-                        Life At GGCSF
-                    </h2>
-                    <div className="w-[40px] flex justify-start items-start h-[1px] bg-bgColor"></div>
+const LifeAtUE = () => (
+    <div className='w-full py-10 bg-white'>
+        <div className="flex flex-col pb-4  gap-4">
+            <div className="flex flex-col mx-auto justify-center ">
+                <h4 className="text-[12px] text-bgColor">Explore Life with us</h4>
+                <h2 className="text-[34px]  text-bgColor font-bold custonFonts">
+                    Life At UE
+                </h2>
+                <div className="w-[40px] flex justify-start items-start h-[1px] bg-bgColor"></div>
 
-                </div>
             </div>
-            {/* <div className='w-full flex items-center justify-center'>
+        </div>
+        {/* <div className='w-full flex items-center justify-center'>
                 <video width="80%" height="500" controls muted
                     autoPlay
                     loop  >
@@ -21,7 +21,7 @@ const LifeAtGgcsf = () => (
                     />
                 </video>
             </div> */}
-            <div className='w-[80%] py-10 mx-auto flex flex-col gap-2' >
+        <div className='w-[80%] py-10 mx-auto flex flex-col gap-2' >
 
             {/* <div className="p-5" style={{boxShadow:" rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px"}}>
             <h1 className='custonFonts text-[22px] text-bgColor font-bold'><center>Blocks</center></h1>
@@ -57,38 +57,33 @@ const LifeAtGgcsf = () => (
                 <p><b>All Canteen & Cafeteria</b></p>
                 <p>1::At the End Zulfiqaar Block......2::Science Block 1st floor(Divine cafee).......3::End OF university(Tabish Biryani,Fork n Knives,Student cafee)</p>
               </div> */}
-                
-                
-                
-                
-                
-                <h1 className='custonFonts text-[22px] text-bgColor font-bold'>IT & Computer Services</h1>
-                <p>IT and Computer Services department provides a wide range of services, facilities and support including high 
-                    speed network access, high specification PCs and laptops and high quality help, advice and 
-                    training to the students, faculty and staff members. The College is using 30MB 
-                    fiber-optic internet connectivity through the HEC’s PERN project. This facility is
-                     providing state-of-the-art communication infrastructure to meet the requirement of 
-                     the networking and internet relating to the learning and research.
-                </p>
-                <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Cafeteria</h1>
-                <p>Cafeteria services catering with hygienic snacks, full meals and drinks are provided on payment on all the campuses of the University. Separate café for girls and boys on all campuses.</p>
-                <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Prayer Area</h1>
-                <p>Mosques are established at all campuses while separate prayer areas for females are also located in all campuses.
-                </p>
-                {/* <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Internet Access</h1>
+
+
+
+
+
+            <h1 className='custonFonts text-[22px] text-bgColor font-bold'>IT & Computer Services</h1>
+            <p>The University of Education Faisalabad Campus has earned a distinguished reputation among educational institutions due to its outstanding performance and excellent results. Established in 1961, it initially operated in the building of the Auqaaf department on Dijkot Road. However, as the institution's goals expanded, it moved to its current 23-acre campus. Initially named Govt. College for Evaluators of Primary Education in West Pakistan, Lyallpur, the institute was later renamed Govt. Training College, Lyallpur in 1976, and eventually became Govt. College of Education, Faisalabad.
+            </p>
+            <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Cafeteria</h1>
+            <p>Cafeteria services catering with hygienic snacks, full meals and drinks are provided on payment on all the campuses of the University. Separate café for girls and boys on all campuses.</p>
+            <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Prayer Area</h1>
+            <p>Mosques are established at all campuses while separate prayer areas for females are also located in all campuses.
+            </p>
+            {/* <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Internet Access</h1>
                 <p>All the campuses and hostels are linked through fiber optic and alongside Wi-Fi internet access is also available at several locations.</p>
                 <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Transport</h1> */}
-                {/* <p>ggscfh International University is providing transport facility to their students from Islamabad, Rawalpindi, Texila and Wah. The facility is provided at I-14 Main Campus Islamabad, Al-Mizan Campus Peshawar Road Rawalpindi WISH Campus H-8 and City Campus G-7 Islamabad for morning and evening both classes. Routes, maps, charges, timings details are available at Student Services Department. Transport is handled by operations department while forms are available at Student Services Department, charges are according to mileage.</p> */}
-                <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Security</h1>    
-                <p>All campuses are well guarded by the round-the-clock-security services through active security guards, fenced boundary walls and equipped with the CCTV cameras to ensure safe environment for all the stakeholders.</p>
-                
-                <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Class rooms & Auditorium</h1>
-                <p>The classroom and auditoriums are fully furnished and are equipped with audio/video aids for better modern learning environment.
+            {/* <p>ggscfh International University is providing transport facility to their students from Islamabad, Rawalpindi, Texila and Wah. The facility is provided at I-14 Main Campus Islamabad, Al-Mizan Campus Peshawar Road Rawalpindi WISH Campus H-8 and City Campus G-7 Islamabad for morning and evening both classes. Routes, maps, charges, timings details are available at Student Services Department. Transport is handled by operations department while forms are available at Student Services Department, charges are according to mileage.</p> */}
+            <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Security</h1>
+            <p>All campuses are well guarded by the round-the-clock-security services through active security guards, fenced boundary walls and equipped with the CCTV cameras to ensure safe environment for all the stakeholders.</p>
 
-                </p>
+            <h1 className='custonFonts text-[22px] text-bgColor font-bold'>Class rooms & Auditorium</h1>
+            <p>The classroom and auditoriums are fully furnished and are equipped with audio/video aids for better modern learning environment.
 
-            </div>
+            </p>
+
         </div>
-    )
+    </div>
+)
 
-export default LifeAtGgcsf
+export default LifeAtUE
