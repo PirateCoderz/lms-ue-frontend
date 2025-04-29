@@ -62,9 +62,9 @@ const About = () => (
           <img className="w-1/4" src={Vision} alt="" />
         </div>
         <div className="">
-          <h2 className="custonFonts  text-[25px] text-textColor">Vission</h2>
+          <h2 className="custonFonts  text-[25px] text-textColor">Vision</h2>
           <p className="text-base text-[#999999] font-normal">
-            It appeared on the academic scene of the City as Govt. Intermediate College Lyallpur in 1958 when it was set in rented building at peoples Colony, Lyallpur. Later, in 1965 it was shifted to its present 117 kanal vast pupose built campus. The subsequent years saw the college reaching various significant mile stone:
+          As one of the earliest educational institutions in Faisalabad, the University of Education Faisalabad is a unique and well-reputed institute. It holds the distinction of being the first government college in Faisalabad since 1961.
           </p>
         </div>
       </div>

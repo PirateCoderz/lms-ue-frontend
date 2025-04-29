@@ -1,11 +1,11 @@
 /* eslint-disable react/self-closing-comp */
-import ueImage from "../assets/background.jpeg"
+import ggscfImage from "../assets/ripha.jpg"
 
 const NewsLetter = () => (
         <div
             className="w-full flex items-center justify-center h-[50vh]"
             style={{
-                backgroundImage: `url(${ueImage})`,
+                backgroundImage: `url(${ggscfImage})`,
                 boxShadow: "inset 0 0 0 2000px rgba(31,33,39, 0.9 )",
                 width: "100%",
                 backgroundPosition: "center",

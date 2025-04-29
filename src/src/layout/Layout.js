@@ -1,8 +1,8 @@
 /* eslint-disable import/no-useless-path-segments */
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import Navbar from './../components/Navabr';
-import Footer from './../components/Footer';
+import Navbar from '../components/Navabr';
+import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 // import Chatbot from './../components/Chatbot'
 

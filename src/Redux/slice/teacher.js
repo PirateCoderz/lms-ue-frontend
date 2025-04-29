@@ -13,6 +13,8 @@ export const initialState = {
 
 export const getAllTeachersByDepartment = createAsyncThunk('teacher/getAllTeachersByDepartment', async (id) => {
   try {
+    console.log("GET all teachers by Dept ID: ")
+    console.log(id)
     const res = await TeacherServices.getAllTeachersByDepartment(id);
     console.log("res==>", res)
     // if (res.data) {
@@ -27,6 +29,8 @@ export const getAllTeachersByDepartment = createAsyncThunk('teacher/getAllTeache
 
 export const createTeacher = createAsyncThunk('teacher/createTeacher', async (data) => {
   try {
+    console.log("Create a teacher: " )
+
     console.log("data==>", data)
     const res = await TeacherServices.createTeacher(data)
     console.log("res==>", res)
@@ -40,8 +44,10 @@ export const createTeacher = createAsyncThunk('teacher/createTeacher', async (da
   }
 });
 
-export const getAllTeachers = createAsyncThunk('teacher/getAllTeachers', async () => {
+export const getAllTeachers = createAsyncThunk('teacher/getTeachers', async () => {
   try {
+        console.log("GET all teachers: " )
+
     const res = await TeacherServices.getAllTeachers();
     console.log("res==>", res)
     if (res.data) {
@@ -54,7 +60,20 @@ export const getAllTeachers = createAsyncThunk('teacher/getAllTeachers', async (
   }
 });
 
+
+
+export const getAllTeachersByCourseNames = createAsyncThunk('teacher/getAllTeachersByCourseNames', async (data) => {
+  try {
+    const res = await TeacherServices.getAllTeachersByCourseNames(data);
+    return res.data;
+  } catch (error) {
+    toast.error(error.response.message);
+    return error.message;
+  }
+});
+
 export const deleteTeacherById = createAsyncThunk('teacher/deleteTeacherById', async (id) => {
+  console.log("Delete Teacher by id:")
   try {
     const res = await TeacherServices.deleteTeacherById(id);
     console.log("res==>", res)
@@ -68,9 +87,9 @@ export const deleteTeacherById = createAsyncThunk('teacher/deleteTeacherById', a
   }
 });
 
-export const editTeacherById = createAsyncThunk('teacher/editStudentById', async (datas) => {  
+export const editTeacherById = createAsyncThunk('teacher/editStudentById', async (datas) => {
   console.log(datas)
-  const {id, data} = datas
+  const { id, data } = datas
   try {
     const res = await TeacherServices.editTeacherById(id, data);
     console.log("res==>", res)

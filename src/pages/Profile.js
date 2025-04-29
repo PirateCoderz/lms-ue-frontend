@@ -32,7 +32,7 @@ const Profile = () => {
             <p className="mt-8 text-gray-500">
               Faculty of - {user?.user?.type === 'Student' ? user?.user?.courseName : user?.user?.deparment}
             </p>
-            <p className="mt-2 text-gray-500">Govt Graduate College Samanabad Fsd</p>
+            <p className="mt-2 text-gray-500">University of Education Faisalabad</p>
           </div>
         </Box>
       </Grid>
@@ -48,10 +48,12 @@ const Profile = () => {
           flexDirection="column"
           gap={2}
         >
-          
-          <Typography fontWeight="bold">
-            FATHER NAME : <Typography component="span">{user?.user?.fatherName}</Typography>
-          </Typography>
+          {user?.user?.fatherName && (<>
+            <Typography fontWeight="bold">
+              FATHER NAME : <Typography component="span">{user?.user?.fatherName}</Typography>
+            </Typography>
+          </>
+          )}
           <Typography fontWeight="bold">
             GENDER : <Typography component="span">{user?.user?.gender}</Typography>
           </Typography>
@@ -62,22 +64,22 @@ const Profile = () => {
 
           {localStorage.getItem('ggscf_user_type') === 'Student' ? (
             <>
-            <Typography fontWeight="bold">
-            ROLL NO : <Typography component="span">{user?.user?.rollNo}</Typography>
-          </Typography>
               <Typography fontWeight="bold">
-            STUDENT SESSION : <Typography component="span">{user?.user?.session}</Typography>
-          </Typography>
-          <Typography fontWeight="bold">
-            ADMISSION YEAR : <Typography component="span">{user?.user?.session}</Typography>
-          </Typography>
+                ROLL NO : <Typography component="span">{user?.user?.rollNo}</Typography>
+              </Typography>
+              <Typography fontWeight="bold">
+                STUDENT SESSION : <Typography component="span">{user?.user?.session}</Typography>
+              </Typography>
+              <Typography fontWeight="bold">
+                ADMISSION YEAR : <Typography component="span">{user?.user?.session}</Typography>
+              </Typography>
             </>
           ) : null}
-        
-          
+
+
           {user?.user?.type === 'Teacher' ? (
             <>
-            
+
               <Typography fontWeight="bold">
                 QUALIFICATIONS : <Typography component="span">{user?.user?.qualifications}</Typography>
               </Typography>

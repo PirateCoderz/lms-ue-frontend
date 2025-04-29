@@ -1,33 +1,36 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import SectionTitle from "../Common/SectionTitle"
-import Event1 from "../assets/event1.webp"
-import Event2 from "../assets/event2.webp"
-import Event3 from "../assets/event3.webp"
+import Event1 from "../assets/event1.jpeg"
+import Event2 from "../assets/event2.jpeg"
+import Event3 from "../assets/event3.jpeg"
 
 const blogData = [
     {
         id: 1,
         image: Event1,
-        title: "Floriculture Exhibition",
-        para: "An exhibition showcasing various species of flowers and plants with educational insights on floriculture.",
-        date: " | 10:00 am - 6:00 pm"
+        title: "UNDERGRADUATE GALA",
+        para: "5TH UNDERGRADUATE RESEARCH GALA",
+        date: " | 12:00 am - 11:59 pm"
+
     },
     {
         id: 2,
         image: Event2,
-        title: "Sports Gala",
-        para: "A thrilling sports event featuring various athletic competitions and team-building activities.",
-        date: " | 9:00 am - 5:00 pm"
+        title: "internship programs",
+        para: "Metro Company Creates opportunities for RSBM students for internship programs",
+        date: " | 8:00 am - 4:00 pm"
+
     },
     {
         id: 3,
         image: Event3,
-        title: "Seminars",
-        para: "A series of informative seminars on current topics in education, research, and development.",
-        date: " | 10:00 am - 3:00 pm"
-    }
-]
+        title: "International Conference",
+        para: "International Conference on Ecolinguistics and Ecological Narratives by the Department of English (Linguistics and Literature ) Islamabad (CELEN’22)",
+        date: " |8:00 am - 5:00 pm"
 
+    },
+
+]
 const Events = () => (
         <div className='w-full bg-bgColor py-10'>
             <SectionTitle title="Events" para="EXPLORE" />

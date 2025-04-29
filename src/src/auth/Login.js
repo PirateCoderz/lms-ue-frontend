@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginUsers } from '../Redux/slice/users';
-import LogoImage from '../assets/ue-logo.jpeg';
+import LogoImage from '../assets/Logo.png';
 
 const initialValue = {
   username: '',

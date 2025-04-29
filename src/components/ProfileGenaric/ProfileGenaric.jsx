@@ -23,7 +23,7 @@ const ProfileGenaric = ({ item }) => {
                         <p className="mt-8 text-gray-500">
                             Faculty of - {item?.type === 'Student' ? item?.courseName : item?.deparment}
                         </p>
-                        <p className="mt-2 text-gray-500">Govt Graduate College Samanabad Fsd</p>
+                        <p className="mt-2 text-gray-500">University of Education Faisalabad</p>
                     </div>
                 </Box>
             </Grid>

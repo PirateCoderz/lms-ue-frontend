@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { GoThreeBars } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import uelogo from '../assets/ue-logo.jpeg';
+import GPCSFLogo from '../assets/Logo.png';
 
 const FaculityData = [
   {
@@ -206,7 +206,6 @@ const FaculityData = [
   },
 ];
 
-
 const Navbar = () => {
   const [isHover, toggleHover] = React.useState(false);
   const [isHoverList, toggleHoverList] = React.useState(false);
@@ -248,7 +247,7 @@ const Navbar = () => {
             </div>
             <Link to="/home">
               <div className=" w-full cursor-pointer">
-                <img className="w-[50px]" src={uelogo} alt="logo" />
+                <img className="w-[50px]" src={GPCSFLogo} alt="logo" />
               </div>
             </Link>
           </div>

@@ -1,14 +1,14 @@
 import { Navigate, useRoutes } from 'react-router-dom';
 // layouts
-import DashboardLayout from './layouts/dashboard';
+// import DashboardLayout from './layouts/dashboard';
 import SimpleLayout from './layouts/simple';
 //
 import UserPage from './pages/UserPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
-import DashboardAppPage from './pages/DashboardAppPage';
+// import DashboardAppPage from './pages/DashboardAppPage';
 import TeacherPage from './pages/TeacherPage';
-import MeritListPage from './pages/MeritListPage';
+// import MeritListPage from './pages/MeritListPage';
 // import FeeStructure from './pages/Finduniversity';
 import Departments from './pages/Departments';
 import Layout from './src/layout/Layout';
@@ -24,6 +24,7 @@ import ListOfPrograms from './src/Pages/ListOfPrograms';
 import ContactAdmisions from './src/Pages/ContactAdmisions';
 import Login from './src/auth/Login';
 import MeritList from './src/Pages/MeritList';
+// import AssignmentsPage from './src/Pages/AssignmentsPage';
 import Course from "./src/Pages/Course"
 import DashboardLayoutStudent from './layouts/dashboard/DashboardLayoutStudent';
 import DashboardLayoutTeacher from './layouts/dashboard/DashboardLayoutTeacher';
@@ -35,6 +36,16 @@ import Timetables from './pages/Timetable';
 import Finduniversity from './pages/Finduniversity';
 import StudentPage from './pages/StudentPage';
 import ViewAttendence from './pages/ViewAttendence';
+import StudentsAssignmentPage from './pages/StudentsAssignmentPage';
+import StudentsSingleAssignmentPage from './pages/StudentsSingleAssignmentPage';
+import AssignmentsPage from './src/Pages/AssignmentsPage';
+import TeacherSingleAssignmentPage from './pages/TeacherSingleAssignmentPage';
+import TeacherCoursesPage from './pages/TeacherCoursesPage';
+import TeacherQuizzesPage from './src/Pages/TeacherQuizesPage';
+import TeacherViewQuizPage from './pages/TeacherViewQuizPage';
+import TeacherCourseMaterialPage from './src/Pages/TeacherCourseMaterialPage';
+import StudentCourseMaterialPage from './pages/StudentCourseMaterialPage';
+import StudentQuizPage from './pages/StudentQuizPage';
 
 // ----------------------------------------------------------------------
 
@@ -45,7 +56,7 @@ export default function Router() {
       element: <Layout />,
       children: [
         // { path: 'app', element: <DashboardAppPage /> },
-        
+
         { path: 'home', element: <Home /> },
         { path: 'about', element: <About /> },
         { path: 'colleges', element: <Colleges /> },
@@ -68,13 +79,16 @@ export default function Router() {
         { path: 'profile', element: <Profile /> },
         { path: 'user', element: <UserPage /> },
         { path: 'teacher', element: <ProductsPage /> },
+        { path: 'assignments', element: <StudentsAssignmentPage /> },
+        { path: 'quiz', element: <StudentQuizPage /> },
+        { path: 'course-material', element: <StudentCourseMaterialPage /> },
+        { path: 'assignment/:id', element: <StudentsSingleAssignmentPage /> },
         { path: 'find_teacher', element: <TeacherPage /> },
         { path: 'find_university', element: <Finduniversity /> },
         { path: 'departments', element: <Departments /> },
         { path: 'time-table', element: <Timetables /> },
         { path: 'attendence', element: <ViewAttendence /> },
-
-      ],
+      ]
     },
     {
       path: '/dashboard_teacher',
@@ -83,6 +97,12 @@ export default function Router() {
         { path: 'profile', element: <Profile /> },
         { path: 'user', element: <StudentPage /> },
         { path: 'attendence', element: <UserPage /> },
+        { path: 'assignments', element: <AssignmentsPage /> },
+        { path: 'quizes', element: <TeacherQuizzesPage /> },
+        { path: 'quiz/:id', element: <TeacherViewQuizPage /> },
+        { path: 'courses', element: <TeacherCoursesPage /> },
+        { path: 'material', element: <TeacherCourseMaterialPage /> },
+        { path: 'assignments/:id', element: <TeacherSingleAssignmentPage /> },
         { path: 'find_university', element: <Finduniversity /> },
       ],
     },

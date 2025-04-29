@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, Link } from '@mui/material';
-import LogoImg from "../../assets/RIU-Post-01-800x239.png"
+import LogoImg from "../../assets/logo.jpg"
 
 // ----------------------------------------------------------------------
 

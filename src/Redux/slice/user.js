@@ -14,7 +14,7 @@ export const initialState = {
 export const getUserById = createAsyncThunk('user/getUser', async (id) => {
   try {
     const res = await UserServices.getUser(id);
-    console.log('res==>', res);
+    console.log('res==>', res.data.user);
     // if (res.data) {
     //   toast.success(res.data.message);
     // }
