@@ -8,6 +8,10 @@ import {
   CircularProgress,
   Box,
   Paper,
+  Card,
+  CardContent,
+  CardActions,
+  Link,
 } from '@mui/material';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -32,6 +36,7 @@ export default function StudentsSingleAssignmentPage() {
     } catch (error) {
       console.error('Error fetching assignment:', error);
       setErrorMessage('Error fetching assignment details.');
+      setLoading(false);
     }
   };
 
@@ -39,7 +44,7 @@ export default function StudentsSingleAssignmentPage() {
   const checkStudentSubmission = () => {
     if (assignment && user?.user?._id) {
       const submission = assignment.st_assignments.find(
-        (sub) => sub.studentId.toString() === user.user._id
+        (sub) => sub.studentId._id === user.user._id // updated to match your response structure
       );
       if (submission) {
         setStudentSubmission(submission);
@@ -47,6 +52,16 @@ export default function StudentsSingleAssignmentPage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchAssignment();
+  }, [id]);
+
+  useEffect(() => {
+    if (assignment && user?.user?._id) {
+      checkStudentSubmission();
+    }
+  }, [assignment, user]);
 
   const handleFileChange = (e) => setFile(e.target.files[0]);
 
@@ -58,7 +73,7 @@ export default function StudentsSingleAssignmentPage() {
     }
 
     const formData = new FormData();
-    formData.append('assignment', file); // 👈 keep this as 'assignment'
+    formData.append('assignment', file);
 
     try {
       setLoading(true);
@@ -87,18 +102,6 @@ export default function StudentsSingleAssignmentPage() {
     }
   };
 
-  // Initial fetch
-  useEffect(() => {
-    fetchAssignment();
-  }, [id]);
-
-  // Wait for both user and assignment before checking submission
-  useEffect(() => {
-    if (assignment && user?.user?._id) {
-      checkStudentSubmission();
-    }
-  }, [assignment, user]);
-
   if (!assignment || !user?.user?._id || loading) {
     return (
       <Container sx={{ textAlign: 'center', mt: 10 }}>
@@ -111,80 +114,90 @@ export default function StudentsSingleAssignmentPage() {
   }
 
   return (
-    <Container>
-      <Typography variant="h4" sx={{ mb: 4 }}>
-        {assignment.title}
-      </Typography>
+    <Container maxWidth="md" sx={{ mt: 4 }}>
+      {/* Main Assignment Info Card */}
+      <Card sx={{ mb: 4 }}>
+        <CardContent>
+          <Typography variant="h4" component="div" gutterBottom>
+            {assignment.title}
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            {assignment.description}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Due Date: {new Date(assignment.dueDate).toLocaleDateString()}
+          </Typography>
+          {assignment.course && (
+            <Typography variant="subtitle2" mt={1} color="text.secondary">
+              Course: {assignment.course}
+            </Typography>
+          )}
+        </CardContent>
+      </Card>
 
-      <Typography variant="body1" sx={{ mb: 2 }}>
-        {assignment.description}
-      </Typography>
-
-      <Typography variant="body2" sx={{ mb: 4 }}>
-        Due Date: {new Date(assignment.dueDate).toLocaleDateString()}
-      </Typography>
-
+      {/* If student has submitted */}
       {studentSubmission ? (
-        <Paper sx={{ p: 3 }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>
+        <Card variant="outlined" sx={{ p: 3 }}>
+          <Typography variant="h6" gutterBottom>
             Your Submission
           </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            Status: {studentSubmission.status}
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            Marks: {studentSubmission.marks !== null ? studentSubmission.marks : 0}
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            Feedback: {studentSubmission.feedback || 'No feedback'}
-          </Typography>
+          <Typography>Status: {studentSubmission.status}</Typography>
+          <Typography>Marks: {studentSubmission.marks !== null ? studentSubmission.marks : 0}</Typography>
+          <Typography>Feedback: {studentSubmission.feedback || 'No feedback'}</Typography>
           <Button
             variant="outlined"
             href={`http://localhost:5000${studentSubmission.assignment}`}
             target="_blank"
+            sx={{ mt: 2 }}
           >
-            View Submitted File
+            Open Submitted Assignment
           </Button>
-        </Paper>
+        </Card>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <Stack spacing={2}>
-            <TextField
-              type="file"
-              fullWidth
-              onChange={handleFileChange}
-              inputProps={{ accept: '.pdf, .docx, .txt' }}
-              sx={{
-                '& .MuiInputBase-root': { color: 'blue' },
-                '&:hover': { color: 'white' },
-              }}
-            />
+        // Upload Form Card
+        <Paper elevation={3} sx={{ p: 3 }}>
+          <Typography variant="h6" sx={{ mb: 2 }}>
+            Upload Your Assignment
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <Stack spacing={2}>
+              <TextField
+                type="file"
+                fullWidth
+                onChange={handleFileChange}
+                inputProps={{ accept: '.pdf, .docx, .txt' }}
+                sx={{
+                  '& .MuiInputBase-root': { color: 'blue' },
+                  '&:hover': { color: 'white' },
+                }}
+              />
 
-            {errorMessage && (
-              <Typography color="error" variant="body2" sx={{ mb: 2 }}>
-                {errorMessage}
-              </Typography>
-            )}
+              {errorMessage && (
+                <Typography color="error" variant="body2" sx={{ mb: 2 }}>
+                  {errorMessage}
+                </Typography>
+              )}
 
-            {status && (
-              <Typography color="primary" variant="body2" sx={{ mb: 2 }}>
-                {status}
-              </Typography>
-            )}
+              {status && (
+                <Typography color="primary" variant="body2" sx={{ mb: 2 }}>
+                  {status}
+                </Typography>
+              )}
 
-            {loading && <CircularProgress sx={{ mb: 2 }} />}
+              {loading && <CircularProgress sx={{ mb: 2 }} />}
 
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{ mt: 2, color: 'blue', '&:hover': { color: 'white' } }}
-              type="submit"
-              disabled={loading}
-            >
-              Submit Assignment
-            </Button>
-          </Stack>
-        </form>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2, color: 'blue', '&:hover': { color: 'white' } }}
+                type="submit"
+                disabled={loading}
+              >
+                Submit Assignment
+              </Button>
+            </Stack>
+          </form>
+        </Paper>
       )}
     </Container>
   );

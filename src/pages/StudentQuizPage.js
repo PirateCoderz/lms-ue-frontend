@@ -21,6 +21,7 @@ export default function StudentQuizPage() {
         course: selectedCourse,
       });
       setQuizzes(response?.data || []);
+      console.log('response?.data', response?.data);
     } catch (error) {
       console.error('Error fetching quizzes:', error);
     }
@@ -100,7 +101,24 @@ export default function StudentQuizPage() {
                 <Typography variant="body2" sx={{ mb: 1 }}>
                   End: {quiz.endTime ? new Date(quiz.endTime).toLocaleString() : 'N/A'}
                 </Typography>
-
+                {isQuizExpired(quiz.endTime) && (() => {
+                  const studentData = quiz.st_quizzes?.find(s => s.studentId === user?.user?._id);
+                  if (!studentData) return null;
+                  return (
+                    <>
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        Status: {studentData?.status || 'N/A'}
+                      </Typography>
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        Marks: {studentData?.marks ?? 'N/A'}
+                      </Typography>
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        Feedback: {studentData?.feedback || 'No feedback provided'}
+                      </Typography>
+                    </>
+                  );
+                })()
+                }
                 {/* Show Attempt Button or Time Passed */}
                 {isQuizExpired(quiz.endTime) ? (
                   <Typography variant="body2" color="error" sx={{ mt: 2 }}>

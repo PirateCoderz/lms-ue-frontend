@@ -51,7 +51,7 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title> Login | UE Admin </title>
+        <title> Login | SLMS Admin </title>
       </Helmet>
 
       <StyledRoot>
@@ -76,7 +76,7 @@ export default function LoginPage() {
         <Container maxWidth="sm">
           <StyledContent>
             <Typography variant="h4" gutterBottom>
-              Sign in to UE Admin
+              Sign in to SLMS Admin
             </Typography>
             <Divider sx={{ my: 3 }} />
             <LoginForm />

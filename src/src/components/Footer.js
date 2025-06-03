@@ -11,9 +11,7 @@ const Footer = () => (
           <div className="flex items-center md:justify-start justify-center">
             <img className="w-[30%] mx-16" src={Logo} alt="" />
           </div>
-          <p className="text-[12px] text-white">
-          As one of the earliest educational institutions in Faisalabad, the University of Education Faisalabad is a unique and well-reputed institute. It holds the distinction of being since 1961.
-          </p>
+        
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="text-textColor font-bold custonFonts text-[22px]">
@@ -35,11 +33,11 @@ const Footer = () => (
           <div className="flex flex-col text-white gap-2">
     
             <Link to="/admissions/merit">
-              <div className="navbarLink">Merit List</div>
+              <div className="navbarLink">Feedback</div>
             </Link>
   
             <Link to="/admissions/fee">
-              <div className="navbarLink">Fee Structure</div>
+              <div className="navbarLink">FAQ</div>
             </Link>
         
             <Link to="/admissions/contactAdmissions">
@@ -53,13 +51,13 @@ const Footer = () => (
           </h2>
           <div className="flex flex-col text-white gap-2">
             <p className="text-base  hover:text-textColor transition-all ease-out delay-100 cursor-pointer">
-            UE Faisalabad
+            University Contact
             </p>
             <p className="text-base">
               <span className="text-textColor">Phone:</span>+92-300-0000000
             </p>
             <p className="text-base">
-              <span className="text-textColor">Mail:</span>ue.edu.pk@gmail.com
+              <span className="text-textColor">Mail:</span>university.edu.pk@gmail.com
             </p>
             <p className="text-base">
               <span className="text-textColor">Whatsapp:</span>+92-300-0000000

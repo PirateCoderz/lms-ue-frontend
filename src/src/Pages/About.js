@@ -13,7 +13,7 @@ const About = () => (
         Want to be a partner and interested to meet?
       </h2>
       <p className="text-bgColor text-center text-base">
-        As one of the earliest institutions of the University of Education Faisalabad, the University is a unique and well-reputed institute.</p>
+        The Smart features of the SLMS makes it a unique and well-reputed learning system.</p>
       <div className=" w-full  flex gap-4 my-10">
         <Link className="w-full" to="/admissions/contactAdmissions">
           <button className=" w-full py-4  bg-bgColor cursor-pointer custonFonts font-bold text-[18px] text-white rounded-full hover:bg-white hover:border hover:border-bgColor hover:text-bgColor transition-all ease-out duration-500">
@@ -52,7 +52,7 @@ const About = () => (
         <div className="">
           <h2 className="custonFonts  text-[25px] text-textColor">Mission</h2>
           <p className="text-base text-[#999999] font-normal">
-            It appeared on the academic scene of the City as Govt. Intermediate College Lyallpur in 1958 when it was set in rented building at peoples Colony, Lyallpur. Later, in 1965 it was shifted to its present 117 kanal vast pupose built campus. The subsequent years saw the college reaching various significant mile stone:
+            Our Smart Learnig Management System is designed to simplify and enhance the educational experience. With unique features like assignment uploads, interactive quizzes, and organized course materials. The subsequent years saw the system reaching various significant mile stone:
           </p>
         </div>
         <div className="md:flex hidden items-center justify-center">
@@ -64,7 +64,7 @@ const About = () => (
         <div className="">
           <h2 className="custonFonts  text-[25px] text-textColor">Vision</h2>
           <p className="text-base text-[#999999] font-normal">
-          As one of the earliest educational institutions in Faisalabad, the University of Education Faisalabad is a unique and well-reputed institute. It holds the distinction of being the first government college in Faisalabad since 1961.
+          The SLMS is built to transform the way education is delivered and experienced. It fosters a dynamic and user-friendly environment that supports both teaching and learning with ease and flexibility.
           </p>
         </div>
       </div>

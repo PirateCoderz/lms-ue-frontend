@@ -21,7 +21,7 @@ const ContactAdmisions = () => {
             <div className="w-20 h-20 flex items-center justify-center border rounded-full">
               <RiMapPin2Fill className="text-3xl" />
             </div>
-            <h2 className="text-center">{` UE Faisalabad`}</h2>
+            <h2 className="text-center">{` SLMS Faisalabad`}</h2>
           </div>
         </div>
         <div className="group w-full ">

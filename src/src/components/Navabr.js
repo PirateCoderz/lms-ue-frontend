@@ -254,34 +254,9 @@ const Navbar = () => {
           <div className="md:flex text-[14px] mr-16 hidden items-center  md:gap-4 lg:gap-6 xl:gap-12">
             <Link to="/home">Home</Link>
             <Link to="/about">About</Link>
-            <motion.div
-              onMouseOver={() => {
-                toggleHover(true);
-              }}
-              className="flex relative cursor-pointer items-center group"
-              onMouseLeave={() => {
-                toggleHover(false);
-              }}
-            >
-              <div>Admissions</div>
-              <BiChevronDown className="text-3xl group-hover:text-textColor" />
-              <motion.div
-                className="absolute bg-bgColor   text-white top-10 left-0 !w-48 !p-8  z-50 !flex !flex-col gap-4 "
-                initial="exit"
-                animate={isHover ? 'enter' : 'exit'}
-                variants={subMenuAnimate}
-              >
-                <Link to="/admissions/merit">
-                  <div className="navbarLink">Merit List</div>
-                </Link>
-                <Link to="/admissions/fee">
-                  <div className="navbarLink">Fee Structure</div>
-                </Link>
-                <Link to="/admissions/contactAdmissions">
-                  <div className="navbarLink">Contact Admissions Office</div>
-                </Link>
-              </motion.div>
-            </motion.div>
+
+            {/* Removed Admissions menu */}
+
             <motion.div
               onMouseOver={() => {
                 toggleHoverList(true);
@@ -311,6 +286,7 @@ const Navbar = () => {
                         flexDirection: 'column',
                       },
                     }}
+                    key={item.id}
                   >
                     <div className="navbarLink">{item.programe}</div>
                     <AiOutlineRight />
@@ -325,8 +301,11 @@ const Navbar = () => {
                       className="subCatTyp bg-bgColor w-44 p-4 gap-2"
                     >
                       {item.courses.map((course) => (
-                        // eslint-disable-next-line react/jsx-key
-                        <Link state={{ data: course.data }} to={`/programes/${course.name}`}>
+                        <Link
+                          key={course.id}
+                          state={{ data: course.data }}
+                          to={`/programes/${course.name}`}
+                        >
                           <div className="navbarLink">{course.name}</div>
                         </Link>
                       ))}

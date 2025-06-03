@@ -125,6 +125,14 @@
     border-radius: 6px;
     cursor: pointer;
 }
+.sendButton {
+    background: #6e8efb;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
 /* Chat Popup Notification */
 .chatPopup {

@@ -30,23 +30,18 @@ const AboutUs = () => {
                 <div className="lg:w-[60%] xl:h-[100vh] w-[100%] flex flex-col justify-end">
                     <div className="w-full xl:h-[90vh] lg:h-max  bg-white flex flex-col gap-4 p-14">
                         <h3 className="text-bgColor custonFonts text-[26px] font-bold">
-                            College Ranking and Quality Certification
+                            Smart Learning Management System (SLMS)
+
+
                         </h3>
                         <p className="text-[16px] font-normal text-[#999999] ">
-                            The University of Education Faisalabad Campus has earned a distinguished reputation for its exceptional performance and excellent results. Established in 1961, it originally operated in the building of the Auqaaf department on Dijkot Road. However, as the institution's goals expanded, it moved to its current 23-acre campus. Initially named Govt. College for Evaluators of Primary Education in West Pakistan, Lyallpur, the institute was later renamed Govt. Training College, Lyallpur in 1976, and eventually became Govt. College of Education, Faisalabad.</p>
+                        Smart Learning Management System (SLMS) is a comprehensive and innovative platform designed to transform the educational experience across universities. Built to support academic excellence and streamline educational administration, SLMS empowers institutions with cutting-edge tools for course management, student engagement, performance tracking, and quality assurance.Rooted in a legacy of educational advancement, SLMS adapts to the evolving needs of modern academia by offering a scalable, user-friendly environment that fosters learning, collaboration, and institutional growth. Our platform integrates seamlessly with university infrastructures, enhancing both teaching and learning outcomes across diverse disciplines.</p>
                         <div className="flex gap-10 text-[14px] font-bold">
-                            <h3>Give us a Call: </h3>
-                            <h3>092-42-99262226</h3>
+                            <p>Join hundreds of institutions embracing the future of education with SLMS — where innovation meets quality.
+
+</p>
                         </div>
-                        <h3 className=" signatureFont  text-[48px] text-bgColor">
-                            Dr. Shahid Iabal
-                        </h3>
-                        <div className="flex flex-col gap-4">
-                            <h3 className="text-[18px] font-bold">Professor Dr. Shahid Iabal</h3>
-                            <p className="text-[14px] font-normal text-[#333333]">
-                                Principal of UE - Fsd
-                            </p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

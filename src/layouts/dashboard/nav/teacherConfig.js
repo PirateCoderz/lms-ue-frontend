@@ -18,17 +18,17 @@ const teachernavConfig = [
   },
   {
     title: 'Assignments',
-    path: '/dashboard_teacher/assignments',
+    path: '#',
     icon: icon('ic_shape-avatar'),
   },
   {
     title: 'Quizes',
-    path: '/dashboard_teacher/quizes',
+    path: '#',
     icon: icon('ic_shape-avatar'),
   },
   {
     title: 'Course Materials',
-    path: '/dashboard_teacher/material',
+    path: '#',
     icon: icon('ic_shape-avatar'),
   },
 

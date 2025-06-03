@@ -6,6 +6,7 @@ import ThemeProvider from './theme';
 import ScrollToTop from './components/scroll-to-top';
 import { StyledChart } from './components/chart';
 import "./index.css"
+import Chatbot from './src/components/Chatbot';
 
 // ----------------------------------------------------------------------
 
@@ -15,6 +16,7 @@ export default function App() {
       <ScrollToTop />
       <StyledChart />
       <Router />
+      <Chatbot />
     </ThemeProvider>
   );
 }

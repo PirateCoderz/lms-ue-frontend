@@ -21,7 +21,7 @@ const Home = () => (
       {/* <div className="w-full bg-bgColor">
         <div className="w-[80%]  m-auto py-20">
           <div className="flex flex-col gap-4">
-            <SectionTitle title="Fee Structure" para="Explore Fees" />
+            <SectionTitle title="FAQ" para="Explore" />
             <CustomizedAccordions />
           </div>
         </div>

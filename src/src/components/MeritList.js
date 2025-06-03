@@ -67,7 +67,7 @@ export default function CustomizedAccordions() {
 
   return (
     <div className="flex p-24 flex-col gap-4">
-      <SectionTitle color="bgColor" bgColor="bg-bgColor" title="Merit List" para="Explore Merit List" />
+      <SectionTitle color="bgColor" bgColor="bg-bgColor" title="Feedback" para="Explore" />
       {meritList.map((item) => (
         <Accordion expanded={expanded === item._id} onChange={handleChange(item._id)}>
           <AccordionSummary>
